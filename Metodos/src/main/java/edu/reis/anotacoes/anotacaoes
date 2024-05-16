@@ -50,6 +50,12 @@ String email ="aluno@escola.com";
 String [] emails = {"aluno@escola.com","professor@escola.com"}
 String meuNome = "JOSEPH" 
 
+Compreendemos que para declarar uma variável como uma constante, utilizamos a 
+palavra final, mas por convenção, esta variável deverá ser escrita toda em 
+caixa alta.
+
+final int CONSTANTE = valor;
+
 ----------------------- METODOS ----------------------
 
 Os métodos deverão ser nomeados como verbos, através de uma mistura de letras 
