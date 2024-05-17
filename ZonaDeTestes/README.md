@@ -1,7 +1,8 @@
-# Zona de Teste 🐎💨
+# Zona de Testes 🐎💨
 
-Bem-vindo à Zona de Teste! Este é o nosso pequeno canto do caos controlado, onde a lógica é colocada à prova e as ideias ganham vida (ou não). Aqui, testamos códigos rápidos e exploramos conceitos variados sem medo de errar.
-Sobre o Diretório
+Bem-vindo à Zona de Testes! Este é o nosso pequeno canto do caos controlado, onde a lógica é colocada à prova e as ideias ganham vida (ou não). Aqui, testamos códigos rápidos e exploramos conceitos variados sem medo de errar.
+
+## Sobre o Diretório
 
 Este diretório é o nosso playground de experimentações. Nele você encontrará:
 
