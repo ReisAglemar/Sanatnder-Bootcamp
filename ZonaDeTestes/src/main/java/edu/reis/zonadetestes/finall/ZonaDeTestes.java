@@ -3,6 +3,9 @@
  */
 package edu.reis.zonadetestes.finall;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 /**
  *
  * @author reis
@@ -11,6 +14,8 @@ public class ZonaDeTestes {
 
     public static void main(String[] args) {
 
+//-------------------------- CASE E BREAK --------------------------------------
+//
 //        String plano = "T"; // M / T
 //        switch (plano) {
 //            case "T": {
@@ -24,6 +29,8 @@ public class ZonaDeTestes {
 //                System.out.println("100 minutos de ligação");
 //            }
 //        }
+//------------------------------------------------------------------------------
+//---------------------- PRÉ E PÓS INCRMENTO -----------------------------------
 //
 //        int teste = 10;
 //
@@ -34,6 +41,9 @@ public class ZonaDeTestes {
 //            System.out.println(i + " ");
 //
 //        }
+//------------------------------------------------------------------------------
+//-------------------------- CASE E BREAK --------------------------------------
+//
 //        boolean teste = false;
 //
 //        String reposta = (teste) ? "true" : "false";
@@ -58,6 +68,8 @@ public class ZonaDeTestes {
 //                break;
 //            }
 //        }
+//------------------------------------------------------------------------------
+//----------------- FIZZ BUZZ COM O USO DE CONTINUE ----------------------------
 //
 //        int numero = 100;
 //
@@ -81,6 +93,67 @@ public class ZonaDeTestes {
 //            System.out.println(i);
 //
 //        }
+//------------------------------------------------------------------------------
+//----------------------------- TRY CATCH --------------------------------------
+//
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+
+        int numero;
+
+        do {
+
+            try {
+
+                System.out.println("Digite seu nome");
+                String nome = scanner.next();
+
+                System.out.println("Digite seu sobrenome");
+                String sobrenome = scanner.next();
+
+                System.out.println("Digite sua idade");
+                int idade = scanner.nextInt();
+
+                System.out.println("Digite sua altura");
+                double altura = scanner.nextDouble();
+
+                //imprimindo os dados obtidos pelo usuario
+                System.out.println("Ola, me chamo " + nome.toUpperCase() + " " + sobrenome.toUpperCase());
+                System.out.println("Tenho " + idade + " anos ");
+                System.out.println("Minha altura é " + altura + "cm ");
+                scanner.close();
+                numero = 0;
+
+            } catch (Exception e) {
+                String resposta = """
+                                 Que pena, algo não saiu conforme o esperado :/
+                              
+                              Por gentileza, verifique os valores digitados.
+                              Siga o seguinte padrão:
+                              Para nome insira letras;
+                              Para sobrenome insira letras;
+                              Para idade insira um número inteiro;
+                              Para alutra use o ponto na parte fracionada.
+                                  
+                              Digite 1 para tentar novamente ou 0 para sair.    
+                              """;
+                System.out.println(resposta);
+                scanner.nextLine(); // hô glória
+
+                try {
+                    numero = scanner.nextInt();
+                } catch (Exception f) {
+                    System.out.println("Desculpe, não coseguir entender!");
+                    System.out.println("Reinicie a aplicação!");
+                    numero = 0;
+                } finally {
+                }
+
+            } finally {
+            }
+        } while (numero != 0);
+
+        System.out.println("Programa Finalizado!");
+//------------------------------------------------------------------------------
 
     }
 }
