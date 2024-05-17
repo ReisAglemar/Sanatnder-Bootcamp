@@ -75,3 +75,105 @@ findById(int id){} // não se assuste, você verá muito método em inglês em s
 
 calcularImprimir(){} // há algo de errado neste método, ele deveria ter uma única finalidade
 
+
+----------------------- BREAK E CONTINUE ----------------------
+
+class Program {
+    public static void main (String[] args) {
+        for (int x = 0; x < 10; x++) {
+            if (x == 6) continue;
+            if (x == 8) break;
+            switch (x) {
+            case 0:
+                System.out.println("zero");
+                continue;
+            case 1:
+                System.out.println("um");
+                continue;
+            case 2:
+                System.out.println("dois");
+                break;
+            default:
+                System.out.println(x);
+                break;
+            }
+        }
+    }
+}
+
+Na estrutura case o continue e o break tem comportamentos similares, o que não é
+verdade para a estrutura for. Na estrutura case o omissão do continue ou break
+resultado na execusão de todoas as cases abaixo da case de entrada. Já na estrutura 
+for o comportamento é bem distinto, o break encerra a estrutura for, e continue
+devolve o fluxo para o teste, obeser o if (x == 6) continue; o seis não é impreso
+pois nesse momente o fluxo foi desviado para a comparação inicial do laço for.
+
+       for (int x = 0; x < 10; x++) {
+            if (x == 6) continue;
+            if (x == 8) break;
+            switch (x) {
+            case 0:
+                System.out.println("zero");
+                continue;
+//                  break;
+            case 1:
+                System.out.println("um");
+//                continue;
+                  break;
+            case 2:
+                System.out.println("dois");
+                break;
+            default:
+                System.out.println(x);
+                break;
+            }
+        }
+
+Esse algoritimo tem mesma saída do algoritimo acima dele.
+
+
+exemplo de algoritmo usando o continue, para cada condição satisfeita o fluxo 
+será devolvido para o teste. Sem o continue teriamos problemas na impressão do 
+15, por exemplo. Pois o 15 satisfaz todas as condiçoes, sendo seria impresso muito
+mais que o desejado na tela. 
+
+int numero = 100;
+
+        for (int i = 0; i < numero; i++) {
+
+            boolean dividePor3 = (i % 3 == 0);
+            boolean dividepor5 = (i % 5 == 0);
+
+            if (dividePor3 && dividepor5) {
+                System.out.println("FIZZ BUZZ");
+                continue;
+            }
+            if (dividePor3) {
+                System.out.println("FIZZ");
+                continue;
+            }
+            if (dividepor5) {
+                System.out.println("BUZZ");
+                continue;
+            }
+            System.out.println(i);
+        }
+
+----------------------- CLASSE RANDOM ----------------------
+
+boolean atendeu = new Random().nextInt(3)==1;
+
+new Random().nextInt(3)
+
+**A chamada ao método nextInt(3)** da instância Random gera um número inteiro 
+aleatório no intervalo (0, 3), ou seja, pode ser 0, 1 ou 2.
+
+Comparar o número gerado com 1:
+
+new Random().nextInt(3) == 1
+
+Esta expressão compara o número aleatório gerado com 1. A comparação resulta
+em um valor booleano:
+
+    true se o número aleatório for 1.
+    false se o número aleatório for 0 ou 2.
