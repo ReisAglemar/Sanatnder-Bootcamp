@@ -177,3 +177,47 @@ em um valor booleano:
 
     true se o número aleatório for 1.
     false se o número aleatório for 0 ou 2.
+
+-------------------- SINTAXE E SEMANTICA ---------------------
+
+Erro de sintaxe, escreveu errado, geralmente a IDE corrigi ou sinaliza o erro.
+
+Erro de semantica, o lógica está errada, exmplo:
+
+    int numero1 = 5
+    int numero2 = 2
+    int resultado = numero1 / numero2 
+
+nesse momento você espera 2.5, mas isso não vai acontecer, pois resultado,
+numero1 e numero2 é do tipo inteiro. Você pode sair dessa situação de duas 
+formas:
+    
+    1- use as variáveis do tipo float;
+
+         float numero1F = 5;
+         float numero2F = 2;
+         float resultadoF = numero1F / numero2F;
+    
+         System.out.println(resultadoF); // saída 2.5
+
+    2- faça cast das variáveis
+
+        int numero1 = 5;
+        int numero2 = 2;
+        float resultadoCast = (((float) numero1) / ((float) numero2));
+        
+        System.out.println(resultadoCast); // saída 2.5
+    
+    OBS - lembres cast deve ser feito por try catch.
+            
+-------------------- Thread.dumpStack(); ---------------------
+
+
+método utilizado para ver a pilha de processamento, sua sáida será impresa no 
+terminal, e deve ser lida de baixo para cima, pois a estrutura de dados é uma 
+pilha, ou seja o ultimo elemento da pilha foi o primeiro a entrar.
+
+Thread.dumpStack();
+        
+
+
