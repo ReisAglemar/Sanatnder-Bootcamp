@@ -96,64 +96,98 @@ public class ZonaDeTestes {
 //------------------------------------------------------------------------------
 //----------------------------- TRY CATCH --------------------------------------
 //
-        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
-
-        int numero;
-
-        do {
-
-            try {
-
-                System.out.println("Digite seu nome");
-                String nome = scanner.next();
-
-                System.out.println("Digite seu sobrenome");
-                String sobrenome = scanner.next();
-
-                System.out.println("Digite sua idade");
-                int idade = scanner.nextInt();
-
-                System.out.println("Digite sua altura");
-                double altura = scanner.nextDouble();
-
-                //imprimindo os dados obtidos pelo usuario
-                System.out.println("Ola, me chamo " + nome.toUpperCase() + " " + sobrenome.toUpperCase());
-                System.out.println("Tenho " + idade + " anos ");
-                System.out.println("Minha altura é " + altura + "cm ");
-                scanner.close();
-                numero = 0;
-
-            } catch (Exception e) {
-                String resposta = """
-                                 Que pena, algo não saiu conforme o esperado :/
-                              
-                              Por gentileza, verifique os valores digitados.
-                              Siga o seguinte padrão:
-                              Para nome insira letras;
-                              Para sobrenome insira letras;
-                              Para idade insira um número inteiro;
-                              Para alutra use o ponto na parte fracionada.
-                                  
-                              Digite 1 para tentar novamente ou 0 para sair.    
-                              """;
-                System.out.println(resposta);
-                scanner.nextLine(); // hô glória
-
-                try {
-                    numero = scanner.nextInt();
-                } catch (Exception f) {
-                    System.out.println("Desculpe, não coseguir entender!");
-                    System.out.println("Reinicie a aplicação!");
-                    numero = 0;
-                } finally {
-                }
-
-            } finally {
-            }
-        } while (numero != 0);
-
-        System.out.println("Programa Finalizado!");
+//        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+//
+//        int numero;
+//
+//        do {
+//
+//            try {
+//
+//                System.out.println("Digite seu nome");
+//                String nome = scanner.next();
+//
+//                System.out.println("Digite seu sobrenome");
+//                String sobrenome = scanner.next();
+//
+//                System.out.println("Digite sua idade");
+//                int idade = scanner.nextInt();
+//
+//                System.out.println("Digite sua altura");
+//                double altura = scanner.nextDouble();
+//
+//                //imprimindo os dados obtidos pelo usuario
+//                System.out.println("Ola, me chamo " + nome.toUpperCase() + " " + sobrenome.toUpperCase());
+//                System.out.println("Tenho " + idade + " anos ");
+//                System.out.println("Minha altura é " + altura + "cm ");
+//                scanner.close();
+//                numero = 0;
+//
+//            } catch (Exception e) {
+//                String resposta = """
+//                                 Que pena, algo não saiu conforme o esperado :/
+//                              
+//                              Por gentileza, verifique os valores digitados.
+//                              Siga o seguinte padrão:
+//                              Para nome insira letras;
+//                              Para sobrenome insira letras;
+//                              Para idade insira um número inteiro;
+//                              Para alutra use o ponto na parte fracionada.
+//                                  
+//                              Digite 1 para tentar novamente ou 0 para sair.    
+//                              """;
+//                System.out.println(resposta);
+//                scanner.nextLine(); // hô glória
+//
+//                try {
+//                    numero = scanner.nextInt();
+//                } catch (Exception f) {
+//                    System.out.println("Desculpe, não coseguir entender!");
+//                    System.out.println("Reinicie a aplicação!");
+//                    numero = 0;
+//                } finally {
+//                }
+//
+//            } finally {
+//            }
+//        } while (numero != 0);
+//
+//        System.out.println("Programa Finalizado!");
 //------------------------------------------------------------------------------
+//----------------------- SINTAXE E SEMANTICA ----------------------------------
+////
+//        int numero1 = 5;
+//        int numero2 = 2;
+//        int resultado = numero1 / numero2;
+//
+//        float numero1F = 5;
+//        float numero2F = 2;
+//        float resultadoF = numero1F / numero2F;
+//
+//        float resultadoCast = (((float) numero1) / ((float) numero2));
+//        Thread.dumpStack();
+//        System.out.println(resultado);
+//        System.out.println(resultadoF);
+//        System.out.println(resultadoCast);
+//------------------------------------------------------------------------------
+        Scanner scan = new Scanner(System.in);
+        String[] alunos = {"Camila", "Lucas", "Bruna", "Pedro"};
 
+        double media = calculaMediaDaTurma(alunos, scan);
+
+        System.out.printf("Média da turma %.1f", media);
     }
+
+    public static double calculaMediaDaTurma(String[] alunos, Scanner scanner) {
+
+        double soma = 0;
+        for (String aluno : alunos) {
+            System.out.printf("Nota do aluno %s: ", aluno);
+            double nota = scanner.nextDouble();
+            soma += nota;
+        }
+
+        return soma / alunos.length;
+    }
+
 }
