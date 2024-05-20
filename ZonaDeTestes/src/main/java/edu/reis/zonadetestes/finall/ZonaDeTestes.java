@@ -181,10 +181,18 @@ public class ZonaDeTestes {
     public static double calculaMediaDaTurma(String[] alunos, Scanner scanner) {
 
         double soma = 0;
+        double nota = 0;
         for (String aluno : alunos) {
             System.out.printf("Nota do aluno %s: ", aluno);
-            double nota = scanner.nextDouble();
-            soma += nota;
+
+            try {
+                nota = scanner.nextDouble();
+            } catch (Exception InputMismatchException) {
+                System.out.println("informe apenas números");
+            } 
+                soma += nota;
+           
+
         }
 
         return soma / alunos.length;
